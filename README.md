@@ -56,16 +56,18 @@ Default behavior for tapping on notification is hiding view. But you can specify
 ###Customization
 
 Fonts:
+
 	EHPlainAlert * ehAlert = [[EHPlainAlert alloc] initWithTitle:@"Info" message:@"This is info message" type:ViewAlertInfo];
     ehAlert.titleFont = [UIFont fontWithName:@"TrebuchetMS" size:15];
     ehAlert.subTitleFont = [UIFont fontWithName:@"TrebuchetMS-Italic" size:12];
     [ehAlert show];
 
 Colors:
+
 	EHPlainAlert * ehAlert = [[EHPlainAlert alloc] initWithTitle:@"Hmm..." message:@"Tap for information" type:ViewAlertInfo];
     ehAlert.messageColor = [UIColor blueColor];
     [ehAlert show];
 
 ## License
 
-Usage is provided under the <a href="http://opensource.org/licenses/MIT" target="_blank">MIT</a> License. See <a href="https://github.com/terryworona/TWMessageBarManager/blob/master/LICENSE">LICENSE</a> for full details.
+Usage is provided under the <a href="http://opensource.org/licenses/MIT" target="_blank">MIT</a> License. See <a href="https://github.com/josshad/EHPlainAlert/blob/master/LICENSE">LICENSE</a> for full details.
