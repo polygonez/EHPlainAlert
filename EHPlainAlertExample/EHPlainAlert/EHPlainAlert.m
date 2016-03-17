@@ -12,7 +12,8 @@
 
 #define EHDEFAULT_TITLE_FONT [UIFont fontWithName:@"HelveticaNeue-Light" size:15]
 #define EHDEFAULT_SUBTITLE_FONT [UIFont fontWithName:@"HelveticaNeue-Light" size:12]
-
+#define EHDEFAULT_MAX_ALERTS_NUMBER 3
+#define EHDEFAULT_HIDING_DELAY 4
 
 @implementation EHPlainAlert
 {
@@ -86,10 +87,10 @@ static NSMutableArray * currentAlertArray = nil;
     titleLabel.numberOfLines = 0;
     [infoView addSubview:titleLabel];
     
-    NSMutableAttributedString * titleString = [[NSMutableAttributedString alloc] initWithString:_title
+    NSMutableAttributedString * titleString = [[NSMutableAttributedString alloc] initWithString:_title ? _title : @""
                                                                                      attributes:@{NSFontAttributeName : _titleFont ? _titleFont : EHDEFAULT_TITLE_FONT}];
     
-    NSAttributedString * messageString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n%@",_message]
+    NSAttributedString * messageString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n%@",_message ? _message : @""]
                                                                          attributes:@{NSFontAttributeName : _subTitleFont ? _subTitleFont : EHDEFAULT_SUBTITLE_FONT}];
     
     [titleString appendAttributedString:messageString];
@@ -97,31 +98,34 @@ static NSMutableArray * currentAlertArray = nil;
     titleLabel.attributedText = titleString;
     
     UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 70)];
-    
+    UIColor * bgColor = nil;
     switch (_alertType) {
         case ViewAlertError:
             
-            infoView.backgroundColor = [UIColor colorWithHex:0xFDB937];
+            bgColor = [UIColor colorWithHex:0xFDB937];
             imageView.image = [UIImage imageNamed:@"alert_error_icon"];
             break;
         case ViewAlertSuccess:
             
-            infoView.backgroundColor = [UIColor colorWithHex:0x49BB7B];
+            bgColor = [UIColor colorWithHex:0x49BB7B];
             imageView.image = [UIImage imageNamed:@"alert_complete_icon"];
             break;
         case ViewAlertInfo:
             
-            infoView.backgroundColor = [UIColor colorWithHex:0x00B2F4];
+            bgColor = [UIColor colorWithHex:0x00B2F4];
             imageView.image = [UIImage imageNamed:@"alert_info_icon"];
             break;
         case ViewAlertPanic:
             
-            infoView.backgroundColor = [UIColor colorWithHex:0xf24841];
+            bgColor = [UIColor colorWithHex:0xf24841];
             imageView.image = [UIImage imageNamed:@"alert_error_icon"];
             break;
         default:
+            bgColor = [UIColor colorWithHex:0xFDB937];
             break;
     }
+    
+    infoView.backgroundColor = _messageColor ? _messageColor : bgColor;
     
     imageView.alpha = 0.4;
     imageView.contentMode = UIViewContentModeCenter;
@@ -135,7 +139,7 @@ static NSMutableArray * currentAlertArray = nil;
 
 - (void)show
 {
-    if ([currentAlertArray count] == 3)
+    if ([currentAlertArray count] == EHDEFAULT_MAX_ALERTS_NUMBER)
     {
         [[currentAlertArray firstObject] hide:@(YES)];
     }
@@ -151,7 +155,7 @@ static NSMutableArray * currentAlertArray = nil;
 
     [currentAlertArray addObject:self];
     
-    [self performSelector:@selector(hide:) withObject:@(YES) afterDelay:4];
+    [self performSelector:@selector(hide:) withObject:@(YES) afterDelay:EHDEFAULT_HIDING_DELAY];
 }
 
 - (void)hide:(NSNumber *)nAnimated

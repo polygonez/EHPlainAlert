@@ -22,11 +22,15 @@ typedef void (^ ActionBlock)();
 
 @interface EHPlainAlert : UIViewController
 
+//action on tap
 @property (nonatomic, strong) ActionBlock action;
 
 @property (nonatomic, strong) UIFont * titleFont;
 
 @property (nonatomic, strong) UIFont * subTitleFont;
+
+@property (nonatomic, strong) UIColor * messageColor;
+
 
 + (instancetype)showError:(NSError *)error;
 
@@ -35,4 +39,5 @@ typedef void (^ ActionBlock)();
 - (id)initWithTitle:(NSString *)title message:(NSString *)message type:(ViewAlertType)type;
 
 - (void)show;
+
 @end

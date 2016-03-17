@@ -60,6 +60,7 @@
     ehAlert.action = ^{
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/josshad/EHPlainAlert"]];
     };
+    ehAlert.messageColor = [UIColor blueColor];
     [ehAlert show];
 }
 
