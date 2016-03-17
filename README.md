@@ -39,9 +39,9 @@ For simplifying error handling you can use:
 
 ###Hiding Messages
 
-Notifications will hidden automatically after 4 seconds. You can override ***EHDEFAULT_HIDING_DELAY*** for changing behavior.
+Notifications will hidden automatically after 4 seconds. You can override ***EHDEFAULT_HIDING_DELAY*** for change this behavior.
 
-Or you can tap on message to hide it.
+Also you can just tap on message to hide it.
 
 ###On Tap Actions
 
