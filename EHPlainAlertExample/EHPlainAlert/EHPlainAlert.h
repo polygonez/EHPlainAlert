@@ -24,6 +24,9 @@ typedef void (^ ActionBlock)();
 
 @property (nonatomic, strong) ActionBlock action;
 
+@property (nonatomic, strong) UIFont * titleFont;
+
+@property (nonatomic, strong) UIFont * subTitleFont;
 
 + (instancetype)showError:(NSError *)error;
 

@@ -42,7 +42,11 @@
 
 - (IBAction)infoAlert:(id)sender
 {
-    [EHPlainAlert showAlertWithTitle:@"Info" message:@"This is info message" type:ViewAlertInfo];
+    EHPlainAlert * ehAlert = [[EHPlainAlert alloc] initWithTitle:@"Info" message:@"This is info message" type:ViewAlertInfo];
+    ehAlert.titleFont = [UIFont fontWithName:@"TrebuchetMS" size:15];
+    ehAlert.subTitleFont = [UIFont fontWithName:@"TrebuchetMS-Italic" size:12];
+    [ehAlert show];
+
 }
 
 - (IBAction)panicAlert:(id)sender

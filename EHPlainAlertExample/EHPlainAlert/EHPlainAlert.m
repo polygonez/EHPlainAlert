@@ -10,6 +10,10 @@
 #import "AppDelegate.h"
 #import "UIColor+UIColorAdditions.h"
 
+#define EHDEFAULT_TITLE_FONT [UIFont fontWithName:@"HelveticaNeue-Light" size:15]
+#define EHDEFAULT_SUBTITLE_FONT [UIFont fontWithName:@"HelveticaNeue-Light" size:12]
+
+
 @implementation EHPlainAlert
 {
     NSString * _title;
@@ -65,6 +69,7 @@ static NSMutableArray * currentAlertArray = nil;
     [self.view addGestureRecognizer:tapGesture];
 }
 
+
 - (void)constructAlert
 {
     UIView * infoView = [UIView new];
@@ -73,7 +78,7 @@ static NSMutableArray * currentAlertArray = nil;
     
     [self.view addSubview:infoView];
     
-    UILabel * titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 0, infoView.frame.size.width - 70, infoView.frame.size.height)];
+    UILabel * titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(55, 0, infoView.frame.size.width - 70, infoView.frame.size.height)];
     
     titleLabel.backgroundColor = [UIColor clearColor];
     titleLabel.textAlignment = NSTextAlignmentLeft;
@@ -81,9 +86,11 @@ static NSMutableArray * currentAlertArray = nil;
     titleLabel.numberOfLines = 0;
     [infoView addSubview:titleLabel];
     
-    NSMutableAttributedString * titleString = [[NSMutableAttributedString alloc] initWithString:_title attributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Light" size:15]}];
+    NSMutableAttributedString * titleString = [[NSMutableAttributedString alloc] initWithString:_title
+                                                                                     attributes:@{NSFontAttributeName : _titleFont ? _titleFont : EHDEFAULT_TITLE_FONT}];
     
-    NSAttributedString * messageString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n%@",_message] attributes:@{NSFontAttributeName : [UIFont fontWithName:@"HelveticaNeue-Light" size:12]}];
+    NSAttributedString * messageString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n%@",_message]
+                                                                         attributes:@{NSFontAttributeName : _subTitleFont ? _subTitleFont : EHDEFAULT_SUBTITLE_FONT}];
     
     [titleString appendAttributedString:messageString];
     
