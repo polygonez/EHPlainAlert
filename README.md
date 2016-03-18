@@ -45,7 +45,7 @@ Also you can just tap on message to hide it.
 
 ###On Tap Actions
 
-Default behavior for tapping on notification is hiding view. But you can specify additional actions:
+You can change the default behavior for tapping on the notification:
 
     EHPlainAlert * ehAlert = [[EHPlainAlert alloc] initWithTitle:@"Hmm..." message:@"Tap for information" type:ViewAlertInfo];
     ehAlert.action = ^{
