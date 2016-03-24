@@ -80,7 +80,7 @@ Fonts:
 
 Colors:
 
-	EHPlainAlert * ehAlert = [[EHPlainAlert alloc] initWithTitle:@"Hmm..." message:@"Tap for information" type:ViewAlertInfo];
+	EHPlainAlert * ehAlert = [[EHPlainAlert alloc] initWithTitle:@"Hmm..." message:@"Blue color alert" type:ViewAlertInfo];
     ehAlert.messageColor = [UIColor blueColor];
     [ehAlert show];
 
