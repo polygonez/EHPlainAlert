@@ -15,11 +15,6 @@ This is simple extension for presenting multiple system-wide notifications from 
 - Simple use actions
 - Highly customizable
 
-##Author
-Danila Gusev
-
-<a href="mailto:jos.shad@gmail.com">jos.shad@gmail.com</a>
-
 ##Usage
 
 ###Presenting notification
@@ -67,6 +62,11 @@ Colors:
 	EHPlainAlert * ehAlert = [[EHPlainAlert alloc] initWithTitle:@"Hmm..." message:@"Tap for information" type:ViewAlertInfo];
     ehAlert.messageColor = [UIColor blueColor];
     [ehAlert show];
+
+##Author
+Danila Gusev
+
+<a href="mailto:jos.shad@gmail.com">jos.shad@gmail.com</a>
 
 ## License
 
