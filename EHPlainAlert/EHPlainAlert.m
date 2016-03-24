@@ -7,7 +7,6 @@
 //
 
 #import "EHPlainAlert.h"
-#import "AppDelegate.h"
 #import "UIColor+UIColorAdditions.h"
 
 #define EHDEFAULT_TITLE_FONT [UIFont fontWithName:@"HelveticaNeue-Light" size:15]
@@ -146,9 +145,9 @@ static NSMutableArray * currentAlertArray = nil;
     
     NSInteger numberOfAlerts = [currentAlertArray count];
     if (numberOfAlerts == 0)
-        [((AppDelegate *)[UIApplication sharedApplication].delegate).window addSubview:self.view];
+        [([UIApplication sharedApplication].delegate).window addSubview:self.view];
     else
-        [((AppDelegate *)[UIApplication sharedApplication].delegate).window insertSubview:self.view belowSubview:[((EHPlainAlert *)[currentAlertArray lastObject]) view]];
+        [([UIApplication sharedApplication].delegate).window insertSubview:self.view belowSubview:[((EHPlainAlert *)[currentAlertArray lastObject]) view]];
     [UIView animateWithDuration:0.3 animations:^{
         self.view.frame = CGRectMake(0, screenSize.height - 70 * (numberOfAlerts + 1) - 0.5 * (numberOfAlerts), screenSize.width, 70);
     }];
