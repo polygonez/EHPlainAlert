@@ -2,7 +2,7 @@
 
 This is simple extension for presenting multiple system-wide notifications from bottom of device screen.
 
-<img src="/assets/EHPlainAlert.gif">
+<img src="http://josshad.github.io/EHPlainAlert/EHPlainAlert.gif">
 
 ## Requirements
 
