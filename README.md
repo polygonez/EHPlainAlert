@@ -15,12 +15,28 @@ This is simple extension for presenting multiple system-wide notifications from 
 - Simple use actions
 - Highly customizable
 
-##Author
-Danila Gusev
+## Installation
 
-<a href="mailto:jos.shad@gmail.com">jos.shad@gmail.com</a>
+### CocoaPods
+To install SDCAlertView using CocoaPods, please integrate it in your existing Podfile, or create a new Podfile:
+
+```ruby
+platform :ios, '7.1'
+
+target 'MyApp' do
+  pod 'EHPlainAlert'
+end
+```
+Then run `pod install`.
+
+### Manual
+
+Add EHPlainAlert folder to your project 
+
 
 ##Usage
+
+	#import <EHPlainAlert/EHPlainAlert.h>
 
 ###Presenting notification
 
@@ -64,9 +80,14 @@ Fonts:
 
 Colors:
 
-	EHPlainAlert * ehAlert = [[EHPlainAlert alloc] initWithTitle:@"Hmm..." message:@"Tap for information" type:ViewAlertInfo];
+	EHPlainAlert * ehAlert = [[EHPlainAlert alloc] initWithTitle:@"Hmm..." message:@"Blue color alert" type:ViewAlertInfo];
     ehAlert.messageColor = [UIColor blueColor];
     [ehAlert show];
+
+##Author
+Danila Gusev
+
+<a href="mailto:jos.shad@gmail.com">jos.shad@gmail.com</a>
 
 ## License
 
