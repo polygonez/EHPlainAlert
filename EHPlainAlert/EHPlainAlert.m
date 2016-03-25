@@ -98,27 +98,34 @@ static NSMutableArray * currentAlertArray = nil;
     
     UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 70)];
     UIColor * bgColor = nil;
+    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"MyBundle" ofType:@"bundle"];
+    NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
+
     switch (_alertType) {
         case ViewAlertError:
-            
+        {
             bgColor = [UIColor colorWithHex:0xFDB937];
-            imageView.image = [UIImage imageNamed:@"alert_error_icon"];
+            imageView.image = [UIImage imageNamed:@"eh_alert_error_icon" inBundle:bundle compatibleWithTraitCollection:nil];
             break;
+        }
         case ViewAlertSuccess:
-            
+        {
             bgColor = [UIColor colorWithHex:0x49BB7B];
-            imageView.image = [UIImage imageNamed:@"alert_complete_icon"];
+            imageView.image = [UIImage imageNamed:@"eh_alert_complete_icon" inBundle:bundle compatibleWithTraitCollection:nil];
             break;
+        }
         case ViewAlertInfo:
-            
+        {
             bgColor = [UIColor colorWithHex:0x00B2F4];
-            imageView.image = [UIImage imageNamed:@"alert_info_icon"];
+            imageView.image = [UIImage imageNamed:@"eh_alert_info_icon" inBundle:bundle compatibleWithTraitCollection:nil];
             break;
+        }
         case ViewAlertPanic:
-            
+        {
             bgColor = [UIColor colorWithHex:0xf24841];
-            imageView.image = [UIImage imageNamed:@"alert_error_icon"];
+            imageView.image = [UIImage imageNamed:@"eh_alert_error_icon" inBundle:bundle compatibleWithTraitCollection:nil];
             break;
+        }
         default:
             bgColor = [UIColor colorWithHex:0xFDB937];
             break;
@@ -130,7 +137,7 @@ static NSMutableArray * currentAlertArray = nil;
     imageView.contentMode = UIViewContentModeCenter;
     [infoView addSubview:imageView];
     
-    UIImageView * closeView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"alert_close_icon"]];
+    UIImageView * closeView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"eh_alert_close_icon" inBundle:bundle compatibleWithTraitCollection:nil]];
     closeView.frame = CGRectMake(infoView.bounds.size.width - 15, 8, 7, 7);
     closeView.contentMode = UIViewContentModeCenter;
     [infoView addSubview:closeView];
