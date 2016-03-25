@@ -98,32 +98,32 @@ static NSMutableArray * currentAlertArray = nil;
     
     UIImageView * imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 70)];
     UIColor * bgColor = nil;
-    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"MyBundle" ofType:@"bundle"];
+    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:@"EHPlainAlert" ofType:@"bundle"];
     NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
-
+    UIImage * oImage = nil;
     switch (_alertType) {
         case ViewAlertError:
         {
             bgColor = [UIColor colorWithHex:0xFDB937];
-            imageView.image = [UIImage imageNamed:@"eh_alert_error_icon" inBundle:bundle compatibleWithTraitCollection:nil];
+            oImage = [UIImage imageNamed:@"eh_alert_error_icon" inBundle:bundle compatibleWithTraitCollection:nil];
             break;
         }
         case ViewAlertSuccess:
         {
             bgColor = [UIColor colorWithHex:0x49BB7B];
-            imageView.image = [UIImage imageNamed:@"eh_alert_complete_icon" inBundle:bundle compatibleWithTraitCollection:nil];
+            oImage = [UIImage imageNamed:@"eh_alert_complete_icon" inBundle:bundle compatibleWithTraitCollection:nil];
             break;
         }
         case ViewAlertInfo:
         {
             bgColor = [UIColor colorWithHex:0x00B2F4];
-            imageView.image = [UIImage imageNamed:@"eh_alert_info_icon" inBundle:bundle compatibleWithTraitCollection:nil];
+            oImage = [UIImage imageNamed:@"eh_alert_info_icon" inBundle:bundle compatibleWithTraitCollection:nil];
             break;
         }
         case ViewAlertPanic:
         {
             bgColor = [UIColor colorWithHex:0xf24841];
-            imageView.image = [UIImage imageNamed:@"eh_alert_error_icon" inBundle:bundle compatibleWithTraitCollection:nil];
+            oImage = [UIImage imageNamed:@"eh_alert_error_icon" inBundle:bundle compatibleWithTraitCollection:nil];
             break;
         }
         default:
@@ -132,6 +132,8 @@ static NSMutableArray * currentAlertArray = nil;
     }
     
     infoView.backgroundColor = _messageColor ? _messageColor : bgColor;
+    
+    imageView.image = _iconImage ? _iconImage : oImage;
     
     imageView.alpha = 0.4;
     imageView.contentMode = UIViewContentModeCenter;

@@ -31,6 +31,7 @@ typedef void (^ ActionBlock)();
 
 @property (nonatomic, strong) UIColor * messageColor;
 
+@property (nonatomic, strong) UIImage * iconImage;
 
 + (instancetype)showError:(NSError *)error;
 
