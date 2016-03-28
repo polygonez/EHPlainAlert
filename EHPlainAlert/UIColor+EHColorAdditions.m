@@ -6,7 +6,7 @@
 //  Copyright © 2015 Danila Gusev. All rights reserved.
 //
 
-#import "UIColor+UIColorAdditions.h"
+#import "EHUIColor+UIColorAdditions.h"
 
 @implementation UIColor (UIColorAdditions)
 
