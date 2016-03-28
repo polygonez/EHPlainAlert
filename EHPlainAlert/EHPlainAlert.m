@@ -7,7 +7,7 @@
 //
 
 #import "EHPlainAlert.h"
-#import "UIColor+UIColorAdditions.h"
+#import "UIColor+EHColorAdditions.h"
 
 #define EHDEFAULT_TITLE_FONT [UIFont fontWithName:@"HelveticaNeue-Light" size:15]
 #define EHDEFAULT_SUBTITLE_FONT [UIFont fontWithName:@"HelveticaNeue-Light" size:12]

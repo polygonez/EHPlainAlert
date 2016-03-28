@@ -18,7 +18,7 @@
 		83B3FB801CA3016600E8EB8E /* eh_alert_error_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83B3FB7C1CA3016600E8EB8E /* eh_alert_error_icon@2x.png */; };
 		83B3FB811CA3016600E8EB8E /* eh_alert_info_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83B3FB7D1CA3016600E8EB8E /* eh_alert_info_icon@2x.png */; };
 		83B3FB861CA3017400E8EB8E /* EHPlainAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B3FB831CA3017400E8EB8E /* EHPlainAlert.m */; };
-		83B3FB871CA3017400E8EB8E /* UIColor+UIColorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B3FB851CA3017400E8EB8E /* UIColor+UIColorAdditions.m */; };
+		83B3FB871CA3017400E8EB8E /* UIColor+EHColorAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B3FB851CA3017400E8EB8E /* UIColor+EHColorAdditions.m */; };
 		83E7D4351CA970350011CBD6 /* EHPlainAlertExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E7D4341CA970350011CBD6 /* EHPlainAlertExampleTests.m */; };
 /* End PBXBuildFile section */
 
@@ -49,8 +49,8 @@
 		83B3FB7D1CA3016600E8EB8E /* eh_alert_info_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "eh_alert_info_icon@2x.png"; path = "EHPlainAlert/icons/eh_alert_info_icon@2x.png"; sourceTree = SOURCE_ROOT; };
 		83B3FB821CA3017400E8EB8E /* EHPlainAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EHPlainAlert.h; path = EHPlainAlert/EHPlainAlert.h; sourceTree = SOURCE_ROOT; };
 		83B3FB831CA3017400E8EB8E /* EHPlainAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EHPlainAlert.m; path = EHPlainAlert/EHPlainAlert.m; sourceTree = SOURCE_ROOT; };
-		83B3FB841CA3017400E8EB8E /* UIColor+UIColorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+UIColorAdditions.h"; path = "EHPlainAlert/UIColor+UIColorAdditions.h"; sourceTree = SOURCE_ROOT; };
-		83B3FB851CA3017400E8EB8E /* UIColor+UIColorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+UIColorAdditions.m"; path = "EHPlainAlert/UIColor+UIColorAdditions.m"; sourceTree = SOURCE_ROOT; };
+		83B3FB841CA3017400E8EB8E /* UIColor+EHColorAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+EHColorAdditions.h"; path = "EHPlainAlert/UIColor+EHColorAdditions.h"; sourceTree = SOURCE_ROOT; };
+		83B3FB851CA3017400E8EB8E /* UIColor+EHColorAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+EHColorAdditions.m"; path = "EHPlainAlert/UIColor+EHColorAdditions.m"; sourceTree = SOURCE_ROOT; };
 		83E7D4321CA970350011CBD6 /* EHPlainAlertExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EHPlainAlertExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		83E7D4341CA970350011CBD6 /* EHPlainAlertExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EHPlainAlertExampleTests.m; sourceTree = "<group>"; };
 		83E7D4361CA970350011CBD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -126,8 +126,8 @@
 			children = (
 				83B3FB821CA3017400E8EB8E /* EHPlainAlert.h */,
 				83B3FB831CA3017400E8EB8E /* EHPlainAlert.m */,
-				83B3FB841CA3017400E8EB8E /* UIColor+UIColorAdditions.h */,
-				83B3FB851CA3017400E8EB8E /* UIColor+UIColorAdditions.m */,
+				83B3FB841CA3017400E8EB8E /* UIColor+EHColorAdditions.h */,
+				83B3FB851CA3017400E8EB8E /* UIColor+EHColorAdditions.m */,
 			);
 			name = EHPlainAlert;
 			sourceTree = "<group>";
@@ -248,7 +248,7 @@
 				83B131171C9AF01300987B4F /* ViewController.m in Sources */,
 				83B131141C9AF01300987B4F /* AppDelegate.m in Sources */,
 				83B3FB861CA3017400E8EB8E /* EHPlainAlert.m in Sources */,
-				83B3FB871CA3017400E8EB8E /* UIColor+UIColorAdditions.m in Sources */,
+				83B3FB871CA3017400E8EB8E /* UIColor+EHColorAdditions.m in Sources */,
 				83B131111C9AF01300987B4F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

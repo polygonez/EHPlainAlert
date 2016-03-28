@@ -1,5 +1,5 @@
 //
-//  UIColor+UIColorAdditions.h
+//  UIColor+EHColorAdditions.h
 //  jReader
 //
 //  Created by Danila Gusev on 03/12/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIColor (UIColorAdditions)
+@interface UIColor (EHColorAdditions)
 
 /*!
  * @brief Get int value for color

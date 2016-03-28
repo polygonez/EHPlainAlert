@@ -1,14 +1,14 @@
 //
-//  UIColor+UIColorAdditions.m
+//  UIColor+EHColorAdditions.m
 //  jReader
 //
 //  Created by Danila Gusev on 03/12/15.
 //  Copyright © 2015 Danila Gusev. All rights reserved.
 //
 
-#import "EHUIColor+UIColorAdditions.h"
+#import "UIColor+EHColorAdditions.h"
 
-@implementation UIColor (UIColorAdditions)
+@implementation UIColor (EHColorAdditions)
 
 - (NSInteger)getHexColor
 {
