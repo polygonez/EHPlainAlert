@@ -16,7 +16,7 @@
 - (NSInteger)getHexColor;
 
 /*!
- * @brief Create color with hex value. F.e. [UIColor colorWothHex:0x123ABC]
+ * @brief Create color with hex value. F.e. [UIColor colorWithHex:0x123ABC]
  */
 + (UIColor *)colorWithHex:(NSInteger)intColor;
 @end
