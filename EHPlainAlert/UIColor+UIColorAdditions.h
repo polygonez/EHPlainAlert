@@ -10,6 +10,13 @@
 
 @interface UIColor (UIColorAdditions)
 
+/*!
+ * @brief Get int value for color
+ */
 - (NSInteger)getHexColor;
+
+/*!
+ * @brief Create color with hex value. F.e. [UIColor colorWothHex:0x123ABC]
+ */
 + (UIColor *)colorWithHex:(NSInteger)intColor;
 @end

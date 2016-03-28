@@ -22,23 +22,70 @@ typedef void (^ ActionBlock)();
 
 @interface EHPlainAlert : UIViewController
 
-//action on tap
+/*!
+ * @brief Block that is invoked on notification tap
+ *
+ */
 @property (nonatomic, strong) ActionBlock action;
 
+/*!
+ * @brief Font for a title message. Default font: [UIFont fontWithName:@"HelveticaNeue-Light" size:15]
+ *
+ */
 @property (nonatomic, strong) UIFont * titleFont;
 
+/*!
+ * @brief Font for a subtitle message. Default font: [UIFont fontWithName:@"HelveticaNeue-Light" size:12]
+ *
+ */
 @property (nonatomic, strong) UIFont * subTitleFont;
 
+/*!
+ * @brief Color of notification.
+ *
+ */
 @property (nonatomic, strong) UIColor * messageColor;
 
+/*!
+ * @brief Icon of notification.
+ *
+ */
 @property (nonatomic, strong) UIImage * iconImage;
 
+/*!
+ * @brief show notification with title "Error" and subtitle error.localizedDescription
+ *
+ * @param error Error to show in alert
+ */
 + (instancetype)showError:(NSError *)error;
 
+/*!
+ * @brief show default notification
+ *
+ * @param title Title of the notification
+ *
+ * @param message Subtitle of the notification
+ *
+ * @param type The type of the notification, e.g. ViewAlertSuccess
+ */
 + (instancetype)showAlertWithTitle:(NSString *)title message:(NSString *)message type:(ViewAlertType)type;
 
+
+/*!
+ * @brief initialize notification
+ *
+ * @param title Title of the notification
+ *
+ * @param message Subtitle of the notification
+ *
+ * @param type The type of the notification, e.g. ViewAlertSuccess
+ */
 - (id)initWithTitle:(NSString *)title message:(NSString *)message type:(ViewAlertType)type;
 
+
+/*!
+ * @brief show notification
+ */
 - (void)show;
 
 @end
