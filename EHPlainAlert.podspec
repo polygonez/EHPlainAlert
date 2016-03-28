@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
-  This is simple extension for presenting multiple plain-style system-wide notifications(alerts) from bottom of device screen.
+  This is simple extension for presenting multiple plain-style system-wide alertviews from bottom of device screen.
                        DESC
 
   s.homepage         = "https://github.com/josshad/EHPlainAlert/"
