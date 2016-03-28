@@ -47,10 +47,22 @@ typedef void (^ ActionBlock)();
 @property (nonatomic, strong) UIColor * messageColor;
 
 /*!
- * @brief Icon of notification.
+ * @brief Icon of the notification.
  *
  */
 @property (nonatomic, strong) UIImage * iconImage;
+
+/*!
+ * @brief Title of the notification;
+ *
+ */
+@property (nonatomic, copy) NSString * titleString;
+
+/*!
+ * @brief Subtitle of the notification;
+ *
+ */
+@property (nonatomic, copy) NSString * subtitleString;
 
 /*!
  * @brief show notification with title "Error" and subtitle error.localizedDescription
@@ -58,6 +70,13 @@ typedef void (^ ActionBlock)();
  * @param error Error to show in alert
  */
 + (instancetype)showError:(NSError *)error;
+
+/*!
+ * @brief show notification with title error.domain and subtitle error.localizedDescription
+ *
+ * @param error Error to show in alert
+ */
++ (instancetype)showDomainError:(NSError *)error;
 
 /*!
  * @brief show default notification

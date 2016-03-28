@@ -16,8 +16,6 @@
 
 @implementation EHPlainAlert
 {
-    NSString * _title;
-    NSString * _message;
     CGSize screenSize;
     ViewAlertType _alertType;
 }
@@ -28,6 +26,13 @@ static NSMutableArray * currentAlertArray = nil;
 {
     return [self showAlertWithTitle:@"Error" message:error.localizedDescription type:ViewAlertError];
 }
+
+
++ (instancetype)showDomainError:(NSError *)error
+{
+    return [self showAlertWithTitle:error.domain message:error.localizedDescription type:ViewAlertError];
+}
+
 
 + (instancetype)showAlertWithTitle:(NSString *)title message:(NSString *)message type:(ViewAlertType)type
 {
@@ -41,8 +46,8 @@ static NSMutableArray * currentAlertArray = nil;
     self = [super init];
     if (self)
     {
-        _title = title;
-        _message = message;
+        self.titleString = title;
+        self.subtitleString = message;
         if (!currentAlertArray)
         {
             currentAlertArray = [NSMutableArray new];
@@ -52,6 +57,17 @@ static NSMutableArray * currentAlertArray = nil;
     return self;
 }
 
+- (instancetype)init{
+    self = [super init];
+    if (self)
+    {
+        if (!currentAlertArray)
+        {
+            currentAlertArray = [NSMutableArray new];
+        }
+    }
+    return self;
+}
 
 
 - (void)viewDidLoad
@@ -86,10 +102,10 @@ static NSMutableArray * currentAlertArray = nil;
     titleLabel.numberOfLines = 0;
     [infoView addSubview:titleLabel];
     
-    NSMutableAttributedString * titleString = [[NSMutableAttributedString alloc] initWithString:_title ? _title : @""
+    NSMutableAttributedString * titleString = [[NSMutableAttributedString alloc] initWithString:_titleString ? _titleString : @""
                                                                                      attributes:@{NSFontAttributeName : _titleFont ? _titleFont : EHDEFAULT_TITLE_FONT}];
     
-    NSAttributedString * messageString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n%@",_message ? _message : @""]
+    NSAttributedString * messageString = [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"\n%@",_subtitleString ? _subtitleString : @""]
                                                                          attributes:@{NSFontAttributeName : _subTitleFont ? _subTitleFont : EHDEFAULT_SUBTITLE_FONT}];
     
     [titleString appendAttributedString:messageString];
